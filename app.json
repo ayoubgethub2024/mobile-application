@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "SUDU",
+    "slug": "sudu",
+    "scheme": "sudu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#052938"
+    },
+    "android": {
+      "package": "com.ayoub.sudu",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundColor": "#052938"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9f98e70c-f56a-4bd5-ac83-c8d0c4673c35"
+      }
+    },
+    "owner": "ayoub_alkheder"
+  }
+}

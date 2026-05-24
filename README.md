@@ -1,111 +1,50 @@
-# mobile-application
-React Native mobile app for industrial machine control via WebSocket and MQTT. Connects to ESP8266 for real-time monitoring, sensor data visualization, and machine control.
-# Industrial Machine Control Mobile App
+# Welcome to your Expo app 👋
 
-React Native mobile application for industrial machine control via WebSocket and MQTT protocols. Connects to ESP8266-based industrial controllers for real-time monitoring, sensor data visualization, and machine control.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Features
+## Get started
 
-- **Dual Protocol Support** – Connect via WebSocket (direct to ESP8266) or MQTT (via broker)
-- **Real-Time Sensor Data** – Temperature (3 channels), pressure, water level, HC level
-- **Machine Control** – ON/OFF, timer settings (30/45/60 min), engine size selection
-- **Data Logging** – Automatic history logging every minute, snapshot persistence
-- **MQTT Broker Configuration** – Customizable broker host, port, TLS, username/password
-- **Recent IP History** – Saves and suggests recent device IP addresses
-- **Export Functionality** – Export logged data for analysis
+1. Install dependencies
 
-## Tech Stack
+   ```bash
+   npm install
+   ```
 
-| Technology | Purpose |
-|------------|---------|
-| React Native (Expo) | Mobile app framework |
-| TypeScript | Type safety |
-| WebSocket | Real-time device communication |
-| MQTT (MQTT.js) | Broker-based IoT communication |
-| AsyncStorage | Local data persistence |
+2. Start the app
 
-## Architecture
-┌─────────────────────────────────────────────────────────────┐
-│ Mobile Application │
-├─────────────────────────────────────────────────────────────┤
-│ │
-│ ┌─────────────┐ ┌─────────────┐ │
-│ │ WebSocket │ │ MQTT │ │
-│ │ Provider │ │ Provider │ │
-│ └──────┬──────┘ └──────┬──────┘ │
-│ │ │ │
-│ ▼ ▼ │
-│ ┌─────────────┐ ┌─────────────┐ │
-│ │ ESP8266 │ │ Broker │ │
-│ │ (Device) │ │ (Mosquitto/ │ │
-│ └─────────────┘ │ CloudMQTT) │ │
-│ └─────────────┘ │
-│ │
-└─────────────────────────────────────────────────────────────┘
+   ```bash
+   npx expo start
+   ```
 
-## Screens
+In the output, you'll find options to open the app in a
 
-| Screen | Description |
-|--------|-------------|
-| **Main (index.tsx)** | Connection management, real-time sensor data, machine controls |
-| **Export** | View and export logged history |
-| **About** | App information and documentation |
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-## Connection Options
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-### WebSocket (Direct to ESP8266)
-1. Enter device IP address (e.g., `192.168.1.100`)
-2. Tap **Connect**
-3. App connects to `ws://[IP]/ws`
+## Get a fresh project
 
-### MQTT (via Broker)
-1. Enter broker host, port, credentials
-2. Enter Device ID (matches ESP8266 configuration)
-3. Tap **Connect MQTT**
-
-## Data Display
-
-| Data Point | Unit | Description |
-|------------|------|-------------|
-| Temperature 1-3 | °C | Machine temperature sensors |
-| Pressure | PSI | System pressure |
-| Level 1 | % | Water level |
-| Level 2 | % | HC (Hydrocarbon) level |
-| Timer | HH:MM:SS | Remaining session time |
-| Service Remaining | Hours | Time until next calibration |
-
-## Control Commands
-
-| Command | Action |
-|---------|--------|
-| `start` | Start machine operation |
-| `stop` | Stop machine operation |
-| `t30` | Set timer to 30 minutes |
-| `t45` | Set timer to 45 minutes |
-| `t60` | Set timer to 60 minutes |
-| `1000` | Set engine size 0-1L |
-| `2000` | Set engine size 1-2L |
-| `3000` | Set engine size 2-3L |
-| `4000` | Set engine size 3-4L |
-
-## Installation
-
-### Prerequisites
-- Node.js (v16+)
-- npm or yarn
-- Expo CLI
-
-### Setup
+When you're ready, run:
 
 ```bash
-# Clone repository
-git clone https://github.com/ayoubgethub2024/mobile-application.git
-cd mobile-application
+npm run reset-project
+```
 
-# Install dependencies
-npm install
-# or
-yarn install
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-# Start Expo development server
-npx expo start
+## Learn more
+
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
